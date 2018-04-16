@@ -17,13 +17,10 @@ const Peoples=(props)=>(
                   <div className="div-table-col"><h4>{item.last_name}</h4></div>
                   <div className="div-table-col"><h4>{props.checkAge(item.birth_date)}</h4></div>
                 </div>
-
             )
           )}
-    </div>
-
+      </div>
   </div>
 )
-
 
 export default Peoples;
