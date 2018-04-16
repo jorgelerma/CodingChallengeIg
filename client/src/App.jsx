@@ -15,6 +15,7 @@ constructor(props) {
     numbers1: [],
     peoples: []
   }
+}
 
   componentDidMount() {
     this.getNumbers();
@@ -147,7 +148,7 @@ title2Upper(textString){
   render (){
     return (
       <div>
-        <div><h2>Coding challenge for Ignite</h2></div>
+        <div><h2>Coding challenge for Ignite:</h2></div>
         <div><Peoples peoples={this.state.peoples} checkAge={this.checkAge}></Peoples></div>
         <div><Numbers numbers1={this.state.numbers1} checkPrimer={this.checkPrimer} ></Numbers></div>
         <div><Texts texts={this.state.texts} text2Upper={this.text2Upper} title2Upper={this.title2Upper} ></Texts></div>
