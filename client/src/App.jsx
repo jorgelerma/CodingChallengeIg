@@ -65,7 +65,6 @@ getPeople() {
   }
 
 checkPrimer(n){
-
     if(n <=1 ) {return 'Not a prime ';}
     if(n <= 3) {return 'prime';}
     if(n%2 === 0 || n%3 ===0) {return 'Not a prime  ';}
@@ -77,6 +76,17 @@ checkPrimer(n){
       }
     }
     return 'prime';
+  }
+
+checkAge(personBirthday){
+ 	  var currentDate = new Date();
+    var birthday = new Date(personBirthday);
+    var age = currentDate.getFullYear() - birthday.getFullYear();
+    var m = currentDate.getMonth() - birthday.getMonth();
+    if (m < 0 || (m === 0 && currentDate.getDate() < birthday.getDate())) {
+        age--;
+    }
+    return age;
   }
 
 
