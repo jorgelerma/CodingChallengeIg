@@ -118,6 +118,23 @@ text2Upper(textString){
   }
 
 
+title2Upper(textString){
+	 var textArray = textString.split(' ');
+   var newTextString = '';
+
+	 for(var k=0; k<textArray.length; k++){
+		 var stringText = textArray[k];
+		 newTextString = newTextString.concat(stringText.charAt(0).toUpperCase());
+
+			  if(stringText.length > 1){
+				newTextString = newTextString.concat(stringText.substring(1));
+			   }
+				newTextString = newTextString.concat(' ');
+	   }
+	   return newTextString;
+}
+
+
 
 
   render (){
