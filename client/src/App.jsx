@@ -90,6 +90,34 @@ checkAge(personBirthday){
   }
 
 
+text2Upper(textString){
+	var textArray = textString.split('.');
+	var newTextString = '';
+
+	if(textArray.length === 1){
+		newTextString = newTextString.concat(textArray[0].charAt(0).toUpperCase());
+		newTextString = newTextString.concat(textArray[0].substring(1));
+		return newTextString;
+	 }
+
+	for(var k=0; k<textArray.length - 1; k++){
+		var stringText = textArray[k];
+		  for(var t=0; t<stringText.length; t++){
+			  if(stringText.charAt(t) === ' '){
+				   newTextString = newTextString.concat(' ');
+			   }else{
+				   newTextString = newTextString.concat(stringText.charAt(t).toUpperCase());
+				   newTextString = newTextString.concat(stringText.substring(++t));
+				   break;
+			   }
+
+		   }
+		newTextString = newTextString.concat('.');
+	 }
+	 return newTextString;
+  }
+
+
 
 
   render (){
