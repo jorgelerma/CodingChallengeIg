@@ -15,7 +15,7 @@ class App extends Component {
 
 
 
-  getTexts() {
+getTexts() {
    $.ajax({
      url: 'http://174.138.36.217/texts/',
      method: 'GET',
@@ -31,7 +31,7 @@ class App extends Component {
   }
 
 
-  getNumbers() {
+getNumbers() {
    $.ajax({
      url: 'http://174.138.36.217/numbers/',
      method: 'GET',
@@ -48,7 +48,7 @@ class App extends Component {
   }
 
 
-  getPeople() {
+getPeople() {
    $.ajax({
      url: 'http://174.138.36.217/people/',
      method: 'GET',
@@ -62,6 +62,21 @@ class App extends Component {
        console.log('err', err);
      }
    })
+  }
+
+checkPrimer(n){
+
+    if(n <=1 ) {return 'Not a prime ';}
+    if(n <= 3) {return 'prime';}
+    if(n%2 === 0 || n%3 ===0) {return 'Not a prime  ';}
+
+    for(var i=5; i*i <= n; i = i+6){
+
+      if(n%i == 0 || n%(i+2) == 0){
+        return 'Not a prime  ';
+      }
+    }
+    return 'prime';
   }
 
 
