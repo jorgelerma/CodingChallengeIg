@@ -3,6 +3,16 @@ import $ from 'jquery';
 
 
 class App extends Component {
+
+  constructor(props) {
+   super(props);
+
+   this.state = {
+    texts: [{title:'', text: ''}],
+    numbers1: [],
+    peoples: []
+  }
+  
   render (){
     return (
 
