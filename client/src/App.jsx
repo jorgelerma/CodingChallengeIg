@@ -12,7 +12,61 @@ class App extends Component {
     numbers1: [],
     peoples: []
   }
-  
+
+
+
+  getTexts() {
+   $.ajax({
+     url: 'http://174.138.36.217/texts/',
+     method: 'GET',
+     success: (results) => {
+       console.log(results);
+       // console.log(typeof results)
+       this.setState({texts: results});
+     },
+     error: (xhr, err) => {
+       console.log('err', err);
+     }
+   })
+  }
+
+
+  getNumbers() {
+   $.ajax({
+     url: 'http://174.138.36.217/numbers/',
+     method: 'GET',
+     success: (results) => {
+       // console.log(typeof results)
+       // console.log(results);
+
+       this.setState({numbers1: results});
+     },
+     error: (xhr, err) => {
+       console.log('err', err);
+     }
+   })
+  }
+
+
+  getPeople() {
+   $.ajax({
+     url: 'http://174.138.36.217/people/',
+     method: 'GET',
+     success: (results) => {
+       console.log(typeof results)
+       console.log(results);
+
+       this.setState({peoples: results});
+     },
+     error: (xhr, err) => {
+       console.log('err', err);
+     }
+   })
+  }
+
+
+
+
   render (){
     return (
 
